@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="euc-kr" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>공지사항&gt;고객센터&gt;홈</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.mgcap.co.kr/favicon.ico" />
+    <link rel="stylesheet" href="../../assets/css/com/default.css" />
+    <link rel="stylesheet" href="../../assets/css/com/common.css" />
+    <link rel="stylesheet" href="../../assets/css/com/style.css" />
+    <link rel="stylesheet" href="../../assets/css/com/fonts.css" />
+    <link rel="stylesheet" href="../../assets/css/com/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/com/nav.css" />
+    <link rel="stylesheet" href="../../assets/css/com/input.css" />
+    <link rel="stylesheet" href="../../assets/css/com/button.css" />
+    <link rel="stylesheet" href="../../assets/css/com/tab.css" />
+    <link rel="stylesheet" href="../../assets/css/com/table.css" />
+    <link rel="stylesheet" href="../../assets/css/com/mg_content.css" />
+    <link rel="stylesheet" href="../../assets/css/page/noti.css" />
+
+    <script type="text/javascript" src="../../assets/js/lib/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/ui-util.js"></script>
+    <!--[D] 퍼블용 인크루드 스크립트, 개발에서는 사용안함-->
+    <script src="../../assets/js/include.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div data-include-path="../COMMON/header.html"></div>
+
+        <div class="bodyWrap">
+            <main class="contentWrap">
+                <nav class="location-container">
+                    <ol class="breadcrumb">
+                        <li><span class="home">홈</span></li>
+                        <li><span>고객센터</span></li>
+                        <li><span>공지사항</span></li>
+                    </ol>
+                </nav>
+
+                <section class="visual-container">
+                    <h2>공지사항</h2>
+                    <p>고객과 함께하는 MG캐피탈 소식을 바로바로 안내해 드립니다.</p>
+                </section>
+
+                <section class="page-container">
+                    <div class="table-content">
+                        <form action="#" method="post">
+                            <!-- s: 공지사항 검색 -->
+                            <fieldset class="form-content">
+                                <legend>공지사항 검색</legend>
+                                <p class="caption total">전체: <span>100</span>건</p>
+
+                                <div class="form-wrap noti-search">
+                                    <div class="form-group">
+                                        <div class="flex-end">
+                                            <label for="search-first" class="sr-only">검색 구분</label>
+                                            <select id="search-first" title="검색 구분 선택">
+                                                <option value="0" selected="selected">전체</option>
+                                                <option value="1">제목</option>
+                                                <option value="2">내용</option>
+                                            </select>
+
+                                            <div class="search-row">
+                                                <label for="search" class="sr-only">검색어 입력</label>
+                                                <input id="search" type="search" name="search" placeholder="검색어를 입력해주세요" />
+                                                <button type="submit" class="btn-search">검색</button>
+                                            </div>
+
+                                            <button type="button" class="btn-body">새로고침</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <!-- e: 공지사항 검색 -->
+
+                            <div class="table-content">
+                                <table class="mo-s mo-list">
+                                    <caption>공지사항 목록표(번호, 제목, 조회, 날짜 포함)</caption>
+                                    <colgroup>
+                                        <col style="width:98px" />
+                                        <col style="width:auto" />
+                                        <col style="width:92px" />
+                                        <col style="width:170px" />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">번호</th>
+                                            <th scope="col">제목</th>
+                                            <th scope="col">조회</th>
+                                            <th scope="col">날짜</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="num">10</td>
+                                            <td class="title"><a href="javascript:void(0);">공지사항 제목이 들어갑니다.</a></td>
+                                            <td class="inquiry">12</td>
+                                            <td class="date">YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">9</td>
+                                            <td class="title"><a href="javascript:void(0);">공지사항 제목이 들어갑니다.</a></td>
+                                            <td class="inquiry">12</td>
+                                            <td class="date">YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">8</td>
+                                            <td class="title"><a href="javascript:void(0);">공지사항 제목이 들어갑니다.</a></td>
+                                            <td class="inquiry">12</td>
+                                            <td class="date">YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">7</td>
+                                            <td class="title"><a href="javascript:void(0);">공지사항 제목이 들어갑니다.</a></td>
+                                            <td class="inquiry">12</td>
+                                            <td class="date">YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">6</td>
+                                            <td class="title"><a href="javascript:void(0);">공지사항 제목이 들어갑니다.</a></td>
+                                            <td class="inquiry">12</td>
+                                            <td class="date">YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">5</td>
+                                            <td class="title"><a href="javascript:void(0);">공지사항 제목이 들어갑니다.</a></td>
+                                            <td class="inquiry">12</td>
+                                            <td class="date">YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">4</td>
+                                            <td class="title"><a href="javascript:void(0);">공지사항 제목이 들어갑니다.</a></td>
+                                            <td class="inquiry">12</td>
+                                            <td class="date">YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">3</td>
+                                            <td class="title"><a href="javascript:void(0);">공지사항 제목이 들어갑니다.</a></td>
+                                            <td class="inquiry">12</td>
+                                            <td class="date">YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">2</td>
+                                            <td class="title"><a href="javascript:void(0);">공지사항 제목이 들어갑니다.</a></td>
+                                            <td class="inquiry">12</td>
+                                            <td class="date">YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">1</td>
+                                            <td class="title"><a href="javascript:void(0);">공지사항 제목이 들어갑니다.</a></td>
+                                            <td class="inquiry">12</td>
+                                            <td class="date">YYYY.MM.DD</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="pagination-content">
+                                <div>
+                                    <div class="first">
+                                        <a href="javascript:void(0);" class="btn-first">처음으로</a>
+                                        <a href="javascript:void(0);" class="btn-prev">이전으로</a>
+                                    </div>
+
+                                    <div class="page-num">
+                                        <a href="javascript:void(0);" class="active" title="현재 페이지">1</a>
+                                        <a href="javascript:void(0);">2</a>
+                                        <a href="javascript:void(0);">3</a>
+                                        <a href="javascript:void(0);">4</a>
+                                        <a href="javascript:void(0);">5</a>
+                                        <a href="javascript:void(0);">6</a>
+                                        <a href="javascript:void(0);">7</a>
+                                        <a href="javascript:void(0);">8</a>
+                                        <a href="javascript:void(0);">9</a>
+                                        <a href="javascript:void(0);">10</a>
+                                    </div>
+
+                                    <div class="last">
+                                        <a href="javascript:void(0);" class="btn-next">다음으로</a>
+                                        <a href="javascript:void(0);" class="btn-last">마지막으로</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <div data-include-path="../../views/COMMON/footer.html"></div>
+    </div>
+</body>
+</html>

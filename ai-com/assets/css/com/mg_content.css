@@ -1,0 +1,1128 @@
+/* === LOGIN === */
+.page-container.login .tab-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-container.login .tab-panel {
+    padding-top: 0;
+}
+
+.page-container.login #tab2-2 > .form {
+    margin: 0;
+}
+
+/* 수정: 이미지 + 컨텐츠 1:1 (높이 자동 대응) */
+.page-container.login .btn-content.login,
+.page-container.login .private-content.login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    align-items: stretch;
+    margin-top: 0;
+}
+
+.page-container.login .btn-content.login::before,
+.page-container.login .private-content.login::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* 수정: 좌측 이미지 span */
+.page-container.login .btn-content.login::before {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+}
+
+.page-container.login .private-content.login::before {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+/* 수정: 우측 컨텐츠 배치 */
+.page-container.login .btn-content.login > *,
+.page-container.login .private-content.login > * {
+    grid-column: 2;
+}
+
+/* 수정: 이미지 경로 */
+.page-container.login #tab2-1 .btn-content.login::before {
+    background-image: url("../../images/bg_login.png");
+}
+
+.page-container.login #tab2-2 .btn-content.login.phone::before {
+    background-image: url("../../images/bg_login3.png");
+}
+
+.page-container.login #tab2-3 .private-content.login::before {
+    background-image: url("../../images/bg_login2.png");
+}
+
+/* 수정: 버튼 그룹 간격 14px */
+.page-container.login .btn-content.login > .button-group + .button-group,
+.page-container.login .btn-content.login > .button-group + .note-content,
+.page-container.login .private-content.login > .private-group + .note-content {
+    margin-top: 14px;
+}
+
+/* 수정: 버튼 공통 */
+.page-container.login .btn-content.login .button-group a,
+.page-container.login .private-content.login .private-group button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    padding: 0 20px;
+    margin-bottom: 14px; /* 수정: 버튼 간격 */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-size: var(--font16);
+    color: #454545;
+}
+
+.page-container.login .btn-content.login .button-group a:last-child,
+.page-container.login .private-content.login .private-group button:last-child {
+    margin-bottom: 0;
+}
+
+/* 수정: 화살표 */
+.page-container.login .btn-content.login .button-group a::after,
+.page-container.login .private-content.login .private-group button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 9px;
+    height: 9px;
+    margin-top: -5px;
+    border-top: 1px solid #454545;
+    border-right: 1px solid #454545;
+    transform: rotate(45deg);
+}
+
+/* 수정: 메인 버튼은 화살표 제거 유지 */
+.page-container.login .btn-content.login .button-group .btn-primary::after {
+    content: none;
+}
+
+
+/* 수정: 메인 로그인 버튼 */
+.page-container.login .btn-content.login .button-group:first-child {
+    margin-bottom:34px;
+}
+.page-container.login .btn-content.login .button-group .btn-primary {
+    justify-content: center;
+    height: 66px;
+    border-color: var(--primary);
+    border-radius:8px;
+    background-color: var(--primary);
+    font-size: var(--font18);
+    color: #fff;
+}
+
+/* 수정: 기존 after 제거 */
+.page-container.login .btn-content.login .button-group .btn-primary::after {
+    content: none;
+}
+
+/* 수정: 아이콘 앞 배치 + 14px 간격 */
+.page-container.login .btn-content.login .button-group .btn-primary::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-right: 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 28px 28px;
+}
+
+/* 수정: 아이콘 분기 */
+.page-container.login #tab2-1 .btn-content.login .button-group .btn-primary::before {
+    background-image: url("../../images/ico_login.svg");
+}
+
+.page-container.login #tab2-2 .btn-content.login.phone .button-group .btn-primary::before {
+    background-image: url("../../images/ico_login2.png");
+}
+
+/* 수정: 법인공동인증서/휴대폰 인증 화살표 버튼 중앙정렬 + 간격 4px */
+.page-container.login .btn-content.login .button-group a:not(.btn-primary):not(.bnt-link) {
+    justify-content: center; /* 텍스트 중앙 */
+    padding-right: 20px; /* 기존 right:20 유지 */
+}
+
+/* 수정: 화살표 위치를 텍스트 옆으로 변경 */
+.page-container.login .btn-content.login .button-group a:not(.btn-primary):not(.bnt-link)::after {
+    position: static; /* absolute 제거 */
+    margin-left: 4px; /* 텍스트-화살표 간격 4px */
+}
+
+/* 수정: 링크 버튼 */
+.page-container.login .btn-content.login .button-group a.bnt-link {
+    position: relative;
+    justify-content: flex-end;
+    height: auto;
+    padding: 0 35px 0 0;
+    margin-bottom:28px;
+    border: 0;
+    background: transparent;
+    font-size: var(--font16);
+    color: #454545;
+}
+
+.page-container.login .btn-content.login .button-group .bnt-link::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    right: 0;
+    width: 20px;
+    height: 20px;
+    margin:0;
+    border:0;
+    background:url("../../images/com/svg/ico_move2.svg") no-repeat center center;
+}
+
+/* 수정: 민간 인증 아이콘 (원형) */
+.page-container.login .private-content.login .private-group button {
+    padding-left: 64px;
+}
+
+.page-container.login .private-content.login .private-group button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    width: 32px;
+    height: 32px;
+    margin-top: -16px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px 32px;
+}
+
+.page-container.login .private-content.login .private-group button:nth-child(1)::before {
+    background-image: url("../../images/ico_auth_kakaotalk.png");
+}
+
+.page-container.login .private-content.login .private-group button:nth-child(2)::before {
+    background-image: url("../../images/ico_auth_naver.png");
+}
+
+.page-container.login .private-content.login .private-group button:nth-child(3)::before {
+    background-image: url("../../images/ico_auth_toss.png");
+}
+
+.page-container.login .private-content.login .private-group button:nth-child(4)::before {
+    background-image: url("../../images/ico_auth_pass.png");
+}
+
+/* 수정: 노트 */
+.page-container.login .note-content ul li {
+    position: relative;
+    padding-left: 18px;
+    font-size: var(--font14);
+    line-height: 1.6;
+    color: #666;
+}
+
+.page-container.login .note-content ul li + li {
+    margin-top: 6px;
+}
+
+.page-container.login .note-content ul li::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    background: url("../../images/com/svg/ico_info.svg") no-repeat center / 13px 13px;
+}
+
+/* 수정: 탭 간격 */
+.page-container.login .tab-list.depth1 {
+    margin-bottom: 64px;
+}
+
+/* === NOTICE PAGE === */
+
+/* 수정: 검색 상단 정렬 */
+.page-container .form-content {
+    display: table;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+/* === LOGIN TYPE A === */
+.login-a-body {
+    min-width: 320px;
+    margin: 0;
+    background: #eef1f7;
+}
+
+.login-a-page {
+    min-height: 100vh;
+    padding: 70px 20px 40px;
+    box-sizing: border-box;
+}
+
+.login-a-main {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.login-a-card {
+    display: flex;
+    min-height: 515px;
+    padding: 14px;
+    border: 1px solid rgba(201, 210, 224, 0.85);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 8px 26px rgba(75, 96, 132, 0.14);
+}
+
+.login-a-visual {
+    position: relative;
+    flex: 1 1 51%;
+    overflow: hidden;
+    border-radius: 12px;
+    background:
+        radial-gradient(circle at 76% 18%, rgba(112, 169, 238, 0.5), transparent 33%),
+        radial-gradient(circle at 18% 78%, rgba(151, 198, 255, 0.48), transparent 34%),
+        linear-gradient(140deg, #f6f9fe 0%, #ebf2fb 42%, #c8dcf7 100%);
+}
+
+.login-a-glow,
+.login-a-panel,
+.login-a-car,
+.login-a-car > span,
+.login-a-icon {
+    position: absolute;
+}
+
+.login-a-glow {
+    border-radius: 50%;
+    filter: blur(10px);
+}
+
+.login-a-glow-1 {
+    top: 80px;
+    left: 30px;
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.login-a-glow-2 {
+    right: 25px;
+    bottom: 45px;
+    width: 170px;
+    height: 170px;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.login-a-panel {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.48);
+    box-shadow: 0 18px 28px rgba(105, 145, 201, 0.18);
+    backdrop-filter: blur(8px);
+}
+
+.login-a-panel-chart {
+    top: 128px;
+    right: 108px;
+    width: 60px;
+    height: 60px;
+}
+
+.login-a-panel-chart .line {
+    position: absolute;
+    display: block;
+    height: 2px;
+    background: #8db7f2;
+    transform-origin: left center;
+}
+
+.login-a-panel-chart .line-1 {
+    top: 34px;
+    left: 12px;
+    width: 15px;
+    transform: rotate(-40deg);
+}
+
+.login-a-panel-chart .line-2 {
+    top: 25px;
+    left: 24px;
+    width: 12px;
+    transform: rotate(25deg);
+}
+
+.login-a-panel-chart .line-3 {
+    top: 22px;
+    left: 34px;
+    width: 10px;
+    transform: rotate(-55deg);
+}
+
+.login-a-panel-chart::before,
+.login-a-panel-chart::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: #9bc1f5;
+}
+
+.login-a-panel-chart::before {
+    top: 20px;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+}
+
+.login-a-panel-chart::after {
+    top: 16px;
+    right: 12px;
+    width: 6px;
+    height: 6px;
+}
+
+.login-a-panel-pie {
+    top: 160px;
+    right: 36px;
+    width: 62px;
+    height: 62px;
+}
+
+.login-a-panel-pie::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: conic-gradient(#6ea7f0 0 26%, #dbe9fb 26% 100%);
+}
+
+.login-a-panel-list {
+    top: 192px;
+    right: 86px;
+    width: 66px;
+    height: 74px;
+    padding: 15px 13px;
+    box-sizing: border-box;
+}
+
+.login-a-panel-list span {
+    display: block;
+    height: 6px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #a0c2f1 0%, #d8e7fb 100%);
+}
+
+.login-a-panel-list span + span {
+    margin-top: 9px;
+}
+
+.login-a-car {
+    left: 74px;
+    right: 74px;
+    bottom: 84px;
+    height: 190px;
+}
+
+.login-a-car-shadow {
+    left: 54px;
+    right: 40px;
+    bottom: 8px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(95, 129, 181, 0.22);
+    filter: blur(12px);
+}
+
+.login-a-car-body {
+    left: 48px;
+    right: 42px;
+    bottom: 34px;
+    height: 86px;
+    border-radius: 70px 88px 52px 56px;
+    background: linear-gradient(145deg, #7db0f1 6%, #4d80dd 46%, #3457a9 100%);
+    box-shadow:
+        inset 0 8px 14px rgba(255, 255, 255, 0.45),
+        0 14px 22px rgba(65, 91, 146, 0.22);
+}
+
+.login-a-car-body::before {
+    content: "";
+    position: absolute;
+    left: 42px;
+    right: 86px;
+    top: -28px;
+    height: 46px;
+    border-radius: 76px 62px 22px 18px;
+    background: linear-gradient(145deg, rgba(145, 190, 247, 0.96), rgba(68, 110, 196, 0.96));
+    transform: skewX(-12deg);
+}
+
+.login-a-car-body::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: -6px;
+    height: 24px;
+    border-radius: 0 0 30px 30px;
+    background: linear-gradient(180deg, rgba(39, 64, 122, 0.16), rgba(39, 64, 122, 0));
+}
+
+.login-a-car-window {
+    left: 118px;
+    right: 128px;
+    bottom: 86px;
+    height: 38px;
+    border-radius: 46px 40px 14px 10px;
+    background: linear-gradient(135deg, rgba(241, 247, 255, 0.88), rgba(110, 152, 221, 0.38));
+    transform: skewX(-16deg);
+}
+
+.login-a-wheel {
+    bottom: 18px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #dfe7f3 0 28%, #7b8ca8 29% 48%, #283449 49% 100%);
+    box-shadow: 0 5px 12px rgba(53, 74, 116, 0.18);
+}
+
+.login-a-wheel-left {
+    left: 102px;
+}
+
+.login-a-wheel-right {
+    right: 86px;
+}
+
+.login-a-light {
+    bottom: 66px;
+    width: 16px;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.login-a-car-light-front {
+    right: 36px;
+    background: linear-gradient(90deg, rgba(230, 245, 255, 0.35), rgba(255, 255, 255, 0.96));
+    box-shadow: 12px 0 20px rgba(255, 255, 255, 0.55);
+}
+
+.login-a-car-light-back {
+    left: 46px;
+    background: linear-gradient(90deg, rgba(243, 121, 123, 0.88), rgba(255, 212, 212, 0.3));
+}
+
+.login-a-ring {
+    bottom: -4px;
+    width: 74px;
+    height: 28px;
+    border: 2px solid rgba(255, 255, 255, 0.72);
+    border-radius: 50%;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.6);
+}
+
+.login-a-ring-left {
+    left: 74px;
+}
+
+.login-a-ring-right {
+    right: 60px;
+}
+
+.login-a-content {
+    flex: 1 1 49%;
+    padding: 24px 22px 22px 36px;
+    box-sizing: border-box;
+}
+
+.login-a-brand,
+.login-a-guide,
+.login-a-footer {
+    text-align: center;
+}
+
+.login-a-brand img {
+    width: 142px;
+    height: auto;
+}
+
+.login-a-brand-title {
+    margin: 12px 0 7px;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #303030;
+}
+
+.login-a-brand-subtitle {
+    margin: 0;
+    font-size: 12px;
+    color: #8a8f99;
+}
+
+.login-a-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0 28px;
+    border-bottom: 1px solid #e3e7ee;
+}
+
+.login-a-nav button {
+    position: relative;
+    flex: 1 1 33.333%;
+    padding: 0 0 12px;
+    border: 0;
+    background: transparent;
+    font-size: 14px;
+    color: #8f95a0;
+    cursor: pointer;
+}
+
+.login-a-nav button.is-active {
+    font-weight: 700;
+    color: #363a41;
+}
+
+.login-a-nav button.is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: #2f3238;
+}
+
+.login-a-form h1 {
+    margin: 0 0 18px;
+    font-size: 39px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1f2630;
+}
+
+.login-a-field {
+    position: relative;
+}
+
+.login-a-field + .login-a-field {
+    margin-top: 14px;
+}
+
+.login-a-field input {
+    height: 54px;
+    padding-left: 48px;
+    border-color: #e3e7ee;
+    border-radius: 8px;
+    background-color: #f7f8fb;
+    font-size: 15px;
+    color: #343842;
+}
+
+.login-a-field input::placeholder {
+    color: #9ba1ab;
+}
+
+.login-a-icon {
+    top: 50%;
+    left: 18px;
+    width: 18px;
+    height: 18px;
+    margin-top: -9px;
+}
+
+.login-a-icon-user::before,
+.login-a-icon-user::after {
+    content: "";
+    position: absolute;
+    background: #8d939e;
+}
+
+.login-a-icon-user::before {
+    top: 0;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.login-a-icon-user::after {
+    left: 1px;
+    bottom: 0;
+    width: 16px;
+    height: 9px;
+    border-radius: 9px 9px 4px 4px;
+}
+
+.login-a-icon-password {
+    background: url("../../images/com/svg/ico_key.svg") no-repeat center / 18px 18px;
+    opacity: 0.58;
+}
+
+.login-a-submit {
+    display: block;
+    width: 100%;
+    height: 52px;
+    margin-top: 16px;
+    border: 0;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #4c94ef 0%, #2f77de 100%);
+    box-shadow: 0 10px 20px rgba(56, 118, 217, 0.18);
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login-a-guide {
+    margin: 34px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid #e3e7ee;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #8e949f;
+}
+
+.login-a-footer {
+    margin-top: 24px;
+    font-size: 12px;
+    color: #8a8f99;
+}
+
+@media (max-width: 860px) {
+    .login-a-page {
+        padding-top: 40px;
+    }
+
+    .login-a-card {
+        display: block;
+        min-height: 0;
+    }
+
+    .login-a-visual {
+        min-height: 290px;
+    }
+
+    .login-a-car {
+        left: 40px;
+        right: 40px;
+        bottom: 46px;
+        transform: scale(0.88);
+        transform-origin: center bottom;
+    }
+
+    .login-a-content {
+        padding: 28px 8px 8px;
+    }
+}
+
+@media (max-width: 560px) {
+    .login-a-page {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .login-a-card {
+        padding: 10px;
+        border-radius: 16px;
+    }
+
+    .login-a-visual {
+        min-height: 230px;
+    }
+
+    .login-a-panel-chart,
+    .login-a-panel-pie,
+    .login-a-panel-list {
+        transform: scale(0.82);
+        transform-origin: top right;
+    }
+
+    .login-a-car {
+        left: 6px;
+        right: 6px;
+        bottom: 30px;
+        transform: scale(0.7);
+    }
+
+    .login-a-brand-title {
+        font-size: 17px;
+    }
+
+    .login-a-form h1 {
+        font-size: 32px;
+    }
+
+    .login-a-nav button {
+        font-size: 13px;
+    }
+}
+
+.page-container .form-content > .caption.total {
+    display: table-cell;
+    padding: 0;
+    font-size: var(--font18);
+    color: var(--color-6);
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.page-container .form-content > .caption.total span {
+    margin-left: 4px;
+    color: var(--color-45);
+}
+
+.page-container .form-content > .form-wrap.noti-search {
+    display: table-cell;
+    width: 1%;
+    vertical-align: middle;
+}
+
+.page-container .form-wrap.noti-search > .form-group {
+    width: 100%;
+}
+
+.page-container .form-wrap.noti-search .flex-end {
+    font-size: 0;
+    text-align: right;
+}
+
+.page-container .form-wrap.noti-search .flex-end > select,
+.page-container .form-wrap.noti-search .flex-end > .search-row,
+.page-container .form-wrap.noti-search .flex-end > .btn-body {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: var(--font16);
+}
+
+/* 수정: 전체 셀렉트박스 */
+.page-container .form-wrap.noti-search .flex-end > select {
+    width: 136px;
+    height: 52px;
+    margin-right: 12px;
+    padding: 0 48px 0 20px;
+    border: 1px solid #d9d9d9;
+    border-radius: 26px;
+    background-color: var(--white);
+    background-position: right 18px center;
+    background-size: 18px auto;
+    line-height: 50px;
+    color: var(--color-45);
+}
+
+/* 수정: 검색어 입력 영역 */
+.page-container .search-row {
+    position: relative;
+    width: 430px;
+    margin-right: 12px;
+}
+
+.page-container .search-row input[type="search"] {
+    width: 100%;
+    height: 52px;
+    padding: 0 56px 0 20px;
+    border: 1px solid #d9d9d9;
+    border-radius: 26px;
+    background-color: var(--white);
+    background-image: none;
+    color: var(--color-45);
+    line-height: 50px;
+}
+
+.page-container .search-row input[type="search"]::-webkit-input-placeholder {
+    color: #8d8d8d;
+}
+
+.page-container .search-row input[type="search"]::-moz-placeholder {
+    color: #8d8d8d;
+    opacity: 1;
+}
+
+.page-container .search-row input[type="search"]:-ms-input-placeholder {
+    color: #8d8d8d;
+}
+
+.page-container .search-row input[type="search"]::placeholder {
+    color: #8d8d8d;
+}
+
+.page-container .search-row .btn-search {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    margin-top: -12px;
+    border: 0;
+    font-size: 0;
+    background: transparent;
+}
+
+.page-container .search-row .btn-search::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-2);
+    mask-image: var(--ico-search);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 18px auto;
+    -webkit-mask-image: var(--ico-search);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 18px auto;
+}
+
+/* 수정: 새로고침 버튼 */
+.page-container .btn-body {
+    width: 52px;
+    height: 52px;
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    background: var(--white);
+    font-size: 0;
+    color: transparent;
+    text-indent: -9999px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.page-container .btn-body::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-2);
+    mask-image: var(--ico_reset);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 18px auto;
+    -webkit-mask-image: var(--ico_reset);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 18px auto;
+}
+
+.page-container .btn-body:hover,
+.page-container .btn-body:focus {
+    color: inherit;
+}
+
+/* === TABLE === */
+
+/* 수정: 이미지처럼 테이블 전체 외곽/세로보더 제거 */
+.page-container .table-content table.mo-list {
+    width: 100%;
+    max-width: 100%;
+    border-top: 1px solid var(--color-2);
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.page-container .table-content table.mo-list thead tr:first-child,
+.page-container .table-content table.mo-list tbody tr:first-child,
+.page-container .table-content table.mo-list thead + tbody tr:first-child {
+    border-top: 0;
+}
+
+.page-container .table-content table.mo-list tr:first-of-type th,
+.page-container .table-content table.mo-list tr:first-of-type td {
+    border-top: 0;
+}
+
+.page-container .table-content table.mo-list th,
+.page-container .table-content table.mo-list td {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.page-container .table-content table.mo-list thead th {
+    height: 74px;
+    padding: 0 10px;
+    background: #eef3f9;
+    font-size: var(--font18);
+    font-weight: var(--font-w-m);
+    color: var(--color-2);
+}
+
+/* 수정: th에만 세로 구분선 */
+.page-container .table-content table.mo-list thead th + th {
+    border-left: 1px solid #d9d9d9;
+}
+
+.page-container .table-content table.mo-list tbody td {
+    height: 72px;
+    padding: 0 10px;
+    font-size: var(--font18);
+    color: var(--color-45);
+    vertical-align: middle;
+}
+
+.page-container .table-content table.mo-list tbody td.title {
+    padding-left: 18px;
+    text-align: left;
+}
+
+.page-container .table-content table.mo-list tbody td.title a {
+    display: inline-block;
+    color: var(--color-45);
+}
+
+.page-container .table-content table.mo-list tbody td.title a:hover,
+.page-container .table-content table.mo-list tbody td.title a:focus {
+    color: var(--color-45);
+}
+
+/* 수정: 페이지네이션 상단 라인과 간격 */
+.pagination-content {
+    margin-top: 46px;
+    text-align: center;
+}
+
+.pagination-content > div {
+    display: inline-block;
+    font-size: 0;
+}
+
+.pagination-content .first,
+.pagination-content .last,
+.pagination-content .page-num {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.pagination-content .first {
+    margin-right: 24px;
+}
+
+.pagination-content .last {
+    margin-left: 24px;
+}
+
+.pagination-content .page-num a {
+    display: inline-block;
+    min-width: 20px;
+    margin: 0 14px;
+    font-size: var(--font18);
+    color: var(--color-6);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.pagination-content .page-num a.active {
+    font-weight: var(--font-w-b);
+    color: #0066ff;
+}
+
+.pagination-content .first a,
+.pagination-content .last a {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    font-size: 0;
+}
+
+.pagination-content .btn-first::before,
+.pagination-content .btn-prev::before,
+.pagination-content .btn-next::before,
+.pagination-content .btn-last::before,
+.pagination-content .btn-first::after,
+.pagination-content .btn-last::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    margin-top: -4px;
+    border-top: 1px solid #b3b3b3;
+    border-right: 1px solid #b3b3b3;
+}
+
+.pagination-content .btn-prev::before {
+    left: 7px;
+    transform: rotate(-135deg);
+}
+
+.pagination-content .btn-next::before {
+    right: 7px;
+    transform: rotate(45deg);
+}
+
+.pagination-content .btn-first::before {
+    left: 8px;
+    transform: rotate(-135deg);
+}
+
+.pagination-content .btn-first::after {
+    left: 12px;
+    transform: rotate(-135deg);
+}
+
+.pagination-content .btn-last::before {
+    right: 12px;
+    transform: rotate(45deg);
+}
+
+.pagination-content .btn-last::after {
+    right: 8px;
+    transform: rotate(45deg);
+}
+
+/* === IE11 === */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .page-container .form-content {
+        display: block;
+    }
+
+    .page-container .form-content > .caption.total {
+        display: inline-block;
+        float: left;
+        padding-top: 16px;
+    }
+
+    .page-container .form-content > .form-wrap.noti-search {
+        display: inline-block;
+        float: right;
+        width: auto;
+    }
+
+    .page-container .form-content:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .page-container .form-wrap.noti-search .flex-end > select,
+    .page-container .form-wrap.noti-search .flex-end > .search-row,
+    .page-container 
+    .form-wrap.noti-search .flex-end > .btn-body {
+        display: inline;
+        zoom: 1;
+    }
+}

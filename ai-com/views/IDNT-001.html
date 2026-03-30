@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title>오릭스 본인인증</title>
+    <meta name="description" content="오릭스 전자약정 본인인증 화면입니다." />
+
+    <link rel="stylesheet" href="../assets/css/com/default.css" />
+    <link rel="stylesheet" href="../assets/css/com/common.css" />
+    <link rel="stylesheet" href="../assets/css/com/style.css" />
+    <link rel="stylesheet" href="../assets/css/com/fonts.css" />
+    <link rel="stylesheet" href="../assets/css/com/layout.css" />
+    <link rel="stylesheet" href="../assets/css/com/input.css" />
+    <link rel="stylesheet" href="../assets/css/com/button.css" />
+    <link rel="stylesheet" href="../assets/css/com/content.css" />
+
+    <script type="text/javascript" src="../assets/js/lib/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../assets/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../assets/js/lib/ui_plugin.js"></script>
+    <script type="text/javascript" src="../assets/js/ui/ui-util.js"></script>
+    <script type="text/javascript" src="../assets/js/terms.js"></script>
+    <script src="//t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <h1 class="header-logo">
+                    <a href="#" aria-label="오릭스 메인으로 이동">
+                        <img src="../assets/images/ORIX_logo.png" alt="ORIX 로고" />
+                    </a>
+                </h1>
+
+                <div class="header-util">
+                    <a href="#" class="faq-link">자주 묻는 질문</a>
+                    <p class="customer" aria-label="고객센터 02-2050-6700">
+                        <span class="customer-label">고객센터</span>
+                        <span class="customer-number">02-2050-6700</span>
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <div class="bodyWrap">
+            <main class="contentWrap" id="content">
+                <section class="page-container auth-page">
+                    <div class="auth-head">
+                        <h2 class="page-title">본인인증</h2>
+                    </div>
+
+                    <div class="auth-body">
+                        <div class="auth-section">
+                            <div class="terms-box" aria-labelledby="terms-title">
+                                <h3 id="terms-title" class="sr-only">약관 동의</h3>
+
+                                <ul class="check-box terms accordionToggle">
+                                    <li class="check-all-area">
+                                        <input type="checkbox" id="chkAll" />
+                                        <label for="chkAll" class="check-button">
+                                            <span>전체 약관동의</span>
+                                        </label>
+                                    </li>
+
+                                    <li class="accordion-item on">
+                                        <div class="tit">
+                                            <input type="checkbox" id="check-required-1" class="chkReq" />
+                                            <label for="check-required-1" class="check-button">
+                                                <span class="terms-label">
+                                                    <span class="required">(필수)</span>
+                                                    <span class="title">개인정보 수집 · 이용 동의</span>
+                                                </span>
+                                            </label>
+                                            <button type="button" title="닫기">약관 내용 열기/닫기</button>
+                                        </div>
+                                        <div class="terms-detail">
+                                            <div class="terms-detail-inner">
+                                                <div class="terms-scroll">
+                                                    <p>[필수]개인정보 수집이용 동의</p>
+                                                    <p>※ 아래의 동의사항은 거래관계의 설정 및 유지를 위한 필수 사항입니다.</p>
+                                                    <p>※ 귀하는 동의를 거부할 권리가 있으나, 동의하지 않을 경우 거래관계의 설정 또는 유지가 불가능할 수 있음을 알려드립니다.</p>
+                                                    <p>※ 신용공여 사실만으로 신용점수가 하락할 수 있으며, 금융거래 또는 신용공여 형태에 따라 은행의 신용공여보다 신용점수 하락폭이 클 수 있습니다.</p>
+                                                    <p>오릭스캐피탈코리아(주) 귀중</p>
+                                                    <p>귀사와의 금융거래 관련하여 귀사가 본인의 개인(신용)정보를 처리하고자 하는 경우에는 관련 법령에 따라 본인의 동의가 필요합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="accordion-item">
+                                        <div class="tit">
+                                            <input type="checkbox" id="check-required-2" class="chkReq" />
+                                            <label for="check-required-2" class="check-button">
+                                                <span class="terms-label">
+                                                    <span class="required">(필수)</span>
+                                                    <span class="title">고유식별정보처리동의</span>
+                                                </span>
+                                            </label>
+                                            <button type="button" title="열기">약관 내용 열기/닫기</button>
+                                        </div>
+                                        <div class="terms-detail">
+                                            <div class="terms-detail-inner">
+                                                <div class="terms-scroll">
+                                                    <p>고유식별정보는 본인확인, 전자약정 체결 및 관련 법령상 의무 이행을 위한 목적으로만 처리됩니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="accordion-item">
+                                        <div class="tit">
+                                            <input type="checkbox" id="check-required-3" class="chkReq" />
+                                            <label for="check-required-3" class="check-button">
+                                                <span class="terms-label">
+                                                    <span class="required">(필수)</span>
+                                                    <span class="title">통신사 이용약관 동의</span>
+                                                </span>
+                                            </label>
+                                            <button type="button" title="열기">약관 내용 열기/닫기</button>
+                                        </div>
+                                        <div class="terms-detail">
+                                            <div class="terms-detail-inner">
+                                                <div class="terms-scroll">
+                                                    <p>휴대폰 본인확인을 위한 통신사 이용약관 동의가 필요합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="accordion-item">
+                                        <div class="tit">
+                                            <input type="checkbox" id="check-required-4" class="chkReq" />
+                                            <label for="check-required-4" class="check-button">
+                                                <span class="terms-label">
+                                                    <span class="required">(필수)</span>
+                                                    <span class="title">서비스 이용약관 동의</span>
+                                                </span>
+                                            </label>
+                                            <button type="button" title="열기">약관 내용 열기/닫기</button>
+                                        </div>
+                                        <div class="terms-detail">
+                                            <div class="terms-detail-inner">
+                                                <div class="terms-scroll">
+                                                    <p>전자약정 서비스 이용에 필요한 조건 및 책임 범위에 대한 동의입니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="auth-section">
+                            <div class="auth-grid">
+                                <div class="info-card" aria-labelledby="guide-title">
+                                    <h3 id="guide-title" class="card-title">안내문 수신 정보</h3>
+
+                                    <div class="field-row form-group" id="email-group">
+                                        <label for="email-id" class="label-tit">이메일</label>
+                                        <div class="field-box">
+                                            <div class="inline-row email-row">
+                                                <span class="ipt-clear">
+                                                    <input type="text" id="email-id" name="email-id" placeholder="이메일을 입력해 주세요." aria-describedby="email-error" />
+                                                </span>
+                                                <span class="row-mark" aria-hidden="true">@</span>
+                                                <span class="ipt-clear">
+                                                    <input type="text" id="email-domain" name="email-domain" aria-describedby="email-error" />
+                                                </span>
+                                            </div>
+                                            <p class="error-text" id="email-error" role="alert">올바른 이메일 주소를 입력해 주세요.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="field-row form-group" id="tel-group">
+                                        <label for="tel-first" class="label-tit">담당자 연락처</label>
+                                        <div class="field-box">
+                                            <div class="inline-row tel-row">
+                                                <div class="select-box">
+                                                    <select id="tel-first" name="tel-first" aria-describedby="tel-error">
+                                                        <option value="">선택</option>
+                                                        <option value="010">010</option>
+                                                        <option value="011">011</option>
+                                                        <option value="016">016</option>
+                                                        <option value="017">017</option>
+                                                        <option value="018">018</option>
+                                                        <option value="019">019</option>
+                                                        <option value="02">02</option>
+                                                    </select>
+                                                </div>
+                                                <input type="tel" id="tel-mid" name="tel-mid" maxlength="4" inputmode="numeric" aria-describedby="tel-error" />
+                                                <input type="tel" id="tel-last" name="tel-last" maxlength="4" inputmode="numeric" aria-describedby="tel-error" />
+                                            </div>
+                                            <p class="error-text" id="tel-error" role="alert">연락처 번호를 모두 입력해 주세요.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="info-card" aria-labelledby="address-title">
+                                    <h3 id="address-title" class="card-title">법인 등록 주소지</h3>
+
+                                    <div class="field-row form-group" id="zip-group">
+                                        <label for="zip-code" class="label-tit">주소</label>
+                                        <div class="field-box">
+                                            <div class="address-row">
+                                                <div class="address-search">
+                                                    <input type="text" id="zip-code" name="zip-code" readonly aria-describedby="zip-error" />
+                                                    <button type="button" class="btn-form" id="btn-postcode">우편번호 검색</button>
+                                                </div>
+                                            </div>
+
+                                            <span class="ipt-clear address-line">
+                                                <input type="text" id="address-base" name="address-base" readonly aria-describedby="zip-error" />
+                                            </span>
+                                            <span class="ipt-clear address-line">
+                                                <input type="text" id="address-detail" name="address-detail" placeholder="상세주소를 입력해 주세요. (ex. A동 1508호)" aria-describedby="zip-error" />
+                                            </span>
+
+                                            <p class="error-text" id="zip-error" role="alert">법인 등록 주소지를 정확히 입력해 주세요.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <div class="bottom-container">
+                <div class="bottom-inner">
+                    <div class="bottom-note">
+                        <p>약정완료 시, 계약서류 및 안내가 입력하신 정보로 발송됩니다.</p>
+                        <p class="rfrnc">정확한 법인 정보를 입력해주시기 바랍니다.</p>
+                    </div>
+
+                    <div class="btn-content cta">
+                        <div class="button-group">
+                            <button type="button" class="btn-primary btn-submit">법인공동인증서 인증하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title>상세약정서 확인 및 전자서명</title>
+    <meta name="description" content="오릭스 전자약정 상세약정서 확인 및 전자서명 화면입니다." />
+
+    <link rel="stylesheet" href="../assets/css/com/default.css" />
+    <link rel="stylesheet" href="../assets/css/com/common.css" />
+    <link rel="stylesheet" href="../assets/css/com/style.css" />
+    <link rel="stylesheet" href="../assets/css/com/fonts.css" />
+    <link rel="stylesheet" href="../assets/css/com/layout.css" />
+    <link rel="stylesheet" href="../assets/css/com/input.css" />
+    <link rel="stylesheet" href="../assets/css/com/button.css" />
+    <link rel="stylesheet" href="../assets/css/com/content.css" />
+
+    <script type="text/javascript" src="../assets/js/lib/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../assets/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../assets/js/lib/ui_plugin.js"></script>
+    <script type="text/javascript" src="../assets/js/ui/ui-util.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <h1 class="header-logo">
+                    <a href="#" aria-label="오릭스 메인으로 이동">
+                        <img src="../assets/images/ORIX_logo.png" alt="ORIX 로고" />
+                    </a>
+                </h1>
+
+                <div class="header-util">
+                    <p class="customer" aria-label="고객센터 02-2050-6700">
+                        <span class="customer-label">고객센터</span>
+                        <span class="customer-number">02-2050-6700</span>
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <div class="bodyWrap">
+            <main class="contentWrap" id="content">
+                <section class="page-container detail-contract">
+                </section>
+            </main>
+        </div>
+
+        <!-- 수정: 하단 CTA -->
+        <div class="bottom-container detail-sign-bottom">
+            <div class="bottom-inner">
+                <div class="bottom-note">
+                    <p class="bottom-title">상세약정서를 최종 확인하였으며, 내용에 이상 없음을 확인했습니다.</p>
+                    <p class="bottom-desc">※ 상세약정서를 모두 확인한 경우, [전자서명 및 제출] 버튼을 통해 전자서명을 진행하실 수 있습니다.</p>
+                </div>
+
+                <div class="btn-content cta">
+                    <div class="button-group">
+                        <button type="button" class="btn-primary" id="detail-sign-submit-btn" disabled>전자서명 및 제출</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-container">
+        <div id="esign-popup" class="layerPopup on">
+            <div class="pop-content esign-popup">
+                <div class="pop-header">
+                    <h2 class="pop-title">전자서명</h2>
+                    <button type="button" class="btn-close-popup" data-popup-close="esign-popup">
+                        <span class="sr-only">팝업 닫기</span>
+                    </button>
+                </div>
+    
+                <div class="pop-body">
+                    <div class="tab-container jsTab esign-tab-container">
+                        <nav class="tab-list depth1 esign-tab-list">
+                            <div class="btn-group">
+                                <button type="button" class="tab-item active" data-tab="esign-tab-sign" aria-selected="true">서명하기</button>
+                                <button type="button" class="tab-item" data-tab="esign-tab-upload" aria-selected="false">인감도장 업로드</button>
+                            </div>
+                        </nav>
+    
+                        <div class="tab-content esign-tab-content">
+                            <!-- 서명하기 -->
+                            <div id="esign-tab-sign" class="tab-panel active">
+                                <div class="esign-sign-box js-sign-wrap">
+                                    <button type="button" class="btn-form btn-sign-reset">초기화</button>
+                                    <canvas class="esign-sign-canvas" aria-label="전자서명 캔버스"></canvas>
+                                    <p class="esign-sign-placeholder">반드시 서명 바랍니다.</p>
+                                </div>
+                            </div>
+    
+                            <!-- 인감도장 업로드 -->
+                            <div id="esign-tab-upload" class="tab-panel">
+                                <div class="esign-upload-box">
+                                    <div class="esign-upload-empty">
+                                        <p class="esign-upload-title">첨부할 파일을 여기로 드래그하여 업로드 하세요.</p>
+                                        <p class="esign-upload-desc">최대 300KB미만의 PNG, JPG 이미지를 한 장 업로드 할 수 있습니다.<br>
+                                            * 반드시 도장 테두리가 잘리지 않은 선명한 이미지의 법인인감을 사용해주세요.</p>
+                        
+                                        <div class="esign-upload-btn-wrap">
+                                            <div class="ipt-file esign-file">
+                                                <label class="upload-label" for="esign-stamp-file">
+                                                    <input id="esign-stamp-file" class="upload" name="esign-stamp-file" type="file" accept=".png,.jpg,.jpeg" />
+                                                    <span class="fileLabel">파일 선택</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="esign-upload-file" style="display: none;">
+                                        <div class="esign-upload-file-info">
+                                            <div class="esign-upload-file-text">
+                                                <p class="esign-upload-file-name"></p>
+                                                <p class="esign-upload-file-size"></p>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn-form btn-upload-delete">파일삭제</button>
+                                    </div>
+                        
+                                    <div class="esign-upload-guide">
+                                        <p class="esign-upload-desc">최대 300KB미만의 PNG, JPG 이미지를 한 장 업로드 할 수 있습니다.<br>
+                                            * 반드시 도장 테두리가 잘리지 않은 선명한 이미지의 법인인감을 사용해주세요.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <ul class="esign-info-list">
+                        <li>본 서명(인감)은 <span class="point">‘자동차임대차(렌탈)계약서, 주민등록번호 수집 · 이용 동의서(렌터카 법인 계약자용), 자동이체 신청서’</span>에 일괄 적용됩니다.</li>
+                        <li>본 서명(인감)정보는 비대면 전자약정 프로세스에 따라, 이어지는 법인공동인증서 인증과 결합하여 법적 효력 및 계약의 성립을 확정하며, 이는 법적으로 직접 자필 및 날인한 것과 동일한 효력을 가집니다.</li>
+                    </ul>
+                </div>
+    
+                <div class="pop-footer">
+                    <div class="button-content">
+                        <div class="button-wrap popup">
+                            <button type="button" class="btn-pop-secondary" data-popup-close="esign-popup">취소</button>
+                            <button type="button" class="btn-pop-primary">제출하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

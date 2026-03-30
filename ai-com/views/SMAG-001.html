@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title>약정서 요약본 확인</title>
+    <meta name="description" content="오릭스 전자약정 약정서 요약본 확인 화면입니다." />
+
+    <link rel="stylesheet" href="../assets/css/com/default.css" />
+    <link rel="stylesheet" href="../assets/css/com/common.css" />
+    <link rel="stylesheet" href="../assets/css/com/style.css" />
+    <link rel="stylesheet" href="../assets/css/com/fonts.css" />
+    <link rel="stylesheet" href="../assets/css/com/layout.css" />
+    <link rel="stylesheet" href="../assets/css/com/input.css" />
+    <link rel="stylesheet" href="../assets/css/com/button.css" />
+    <link rel="stylesheet" href="../assets/css/com/content.css" />
+
+    <script type="text/javascript" src="../assets/js/lib/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../assets/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../assets/js/lib/ui_plugin.js"></script>
+    <script type="text/javascript" src="../assets/js/ui/ui-util.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <h1 class="header-logo">
+                    <a href="#" aria-label="오릭스 메인으로 이동">
+                        <img src="../assets/images/ORIX_logo.png" alt="ORIX 로고" />
+                    </a>
+                </h1>
+
+                <div class="header-util">
+                    <a href="#" class="faq-link">자주 묻는 질문</a>
+                    <p class="customer" aria-label="고객센터 02-2050-6700">
+                        <span class="customer-label">고객센터</span>
+                        <span class="customer-number">02-2050-6700</span>
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <div class="bodyWrap">
+            <main class="contentWrap" id="content">
+                <section class="page-container summary">
+                    <div class="step-wrap">
+                        <ul class="step-list" aria-label="진행 단계">
+                            <li>1</li>
+                            <li>2</li>
+                            <li class="is-active" aria-current="step">3</li>
+                        </ul>
+                        <h2 class="page-title">약정서 요약본을 확인해주세요</h2>
+                    </div>
+
+                    <div class="auth-body">
+                        <div class="estimate-check-grid">
+                            <div class="estimate-check-col">
+                                <div class="info-card" aria-labelledby="customer-info-title">
+                                    <h3 id="customer-info-title" class="card-title">고객정보</h3>
+
+                                    <ul class="data-list">
+                                        <li class="data-item">
+                                            <span class="data-title">법인명</span>
+                                            <span class="data-desc">(주)홍길동 컴퍼니</span>
+                                        </li>
+                                        <li class="data-item">
+                                            <span class="data-title">사업자번호</span>
+                                            <span class="data-desc">123-456567</span>
+                                        </li>
+                                        <li class="data-item">
+                                            <span class="data-title">주소</span>
+                                            <span class="data-desc">
+                                                <p>(06210) 서울시 강남구 테헤란로 306(역삼동)</p>
+                                                <p>카이트타워 13층</p>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="info-card" aria-labelledby="contract-receive-title">
+                                    <h3 id="contract-receive-title" class="card-title">약정서 수신 정보</h3>
+
+                                    <ul class="data-list">
+                                        <li class="data-item">
+                                            <span class="data-title">이메일</span>
+                                            <span class="data-desc">orixagreementmanagement@orix.co.kr</span>
+                                        </li>
+                                        <li class="data-item">
+                                            <span class="data-title">담당자 연락처</span>
+                                            <span class="data-desc">02-2050-6700</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="info-card style2" aria-labelledby="payment-info-title">
+                                    <h3 id="payment-info-title" class="card-title">자동이체 계좌 및 납부정보</h3>
+
+                                    <ul class="data-list">
+                                        <li class="data-item">
+                                            <span class="data-title">자동이체 계좌</span>
+                                            <span class="data-desc">
+                                                <p>신한은행</p>
+                                                <p>110-000-0000000</p>
+                                            </span>
+                                        </li>
+                                        <li class="data-item">
+                                            <span class="data-title">납부내역 수신 이메일</span>
+                                            <span class="data-desc">orixafinance01@orix.co.kr</span>
+                                        </li>
+                                        <li class="data-item">
+                                            <span class="data-title">납부일 설정</span>
+                                            <span class="data-desc">매월 15일</span>
+                                        </li>
+                                        <li class="data-item">
+                                            <span class="data-title">첫회차 납부일납</span>
+                                            <span class="data-desc">2026.03.15</span>
+                                        </li>
+                                    </ul>
+
+                                    <div class="price-box summary-price-box">
+                                        <span class="price-label">월 납입금</span>
+                                        <strong class="price-value">840,280 원</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="estimate-check-side">
+                                <div class="info-card summary-car-card" aria-labelledby="car-info-title">
+                                    <h3 id="car-info-title" class="card-title">차량정보</h3>
+
+                                    <div class="car-info">
+                                        <p class="car-image">
+                                            <img src="../assets/images/gv-70.png" alt="현대 2025년형 디 올 뉴 그랜저 차량 이미지" />
+                                        </p>
+                                        <p class="car-sub">가솔린 터보 1.6 하이브리드 익스클루시브</p>
+                                        <p class="car-name">현대 2025년형 디 올 뉴 그랜저</p>
+                                    </div>
+
+                                    <ul class="data-list summary-data-list line-top">
+                                        <li class="data-item">
+                                            <div class="data-title">색상</div>
+                                            <div class="data-desc">
+                                                <p>큐레이티드 실버 메탈릭/ 외장</p>
+                                                <p>다크 그레이/라이트 그레이 투톤/ 내장</p>
+                                            </div>
+                                        </li>
+
+                                        <li class="data-item">
+                                            <div class="data-title">옵션</div>
+                                            <div class="data-desc">
+                                                <p>파노라마 선루프</p>
+                                                <p>현대 스마트 센스 패키지 Ⅰ</p>
+                                                <p>JBL 사운드 패키지</p>
+                                                <p>컨비니언스 패키지</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="info-card" aria-labelledby="product-info-title">
+                                    <h3 id="product-info-title" class="card-title">상품정보</h3>
+
+                                    <ul class="data-list">
+                                        <li class="data-item">
+                                            <span class="data-title">대여기간</span>
+                                            <span class="data-desc">36개월</span>
+                                        </li>
+                                        <li class="data-item">
+                                            <span class="data-title">보증금</span>
+                                            <span class="data-desc">0</span>
+                                        </li>
+                                        <li class="data-item">
+                                            <span class="data-title">만기인수가</span>
+                                            <span class="data-desc">35,303,000</span>
+                                        </li>
+                                        <li class="data-item">
+                                            <span class="data-title">보험조건</span>
+                                            <span class="data-desc">
+                                                <p>대물 1억</p>
+                                                <p>자손 1억</p>
+                                            </span>
+                                        </li>
+                                        <li class="data-item">
+                                            <span class="data-title">정비</span>
+                                            <span class="data-desc">오릭스 정비 Premium</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <div class="bottom-container">
+                <div class="bottom-inner">
+                    <div class="bottom-note">
+                        <div class="check-item same-check">
+                            <label for="same-email" class="check">
+                                <input type="checkbox" id="same-email" name="same-email" value="" />
+                                <span>약정 주요내용을 최종 확인하였으며, 내용에 이상 없음을 확인했습니다.</span>
+                            </label>
+                        </div>
+                        <p class="rfrnc">내용에 이상이 없을 경우, [다음] 버튼을 통해 최종 계약서 확인 및 전자서명 화면으로 이동하실 수 있습니다.</p>
+                    </div>
+
+                    <div class="btn-content cta">
+                        <div class="button-group">
+                            <button type="button" class="btn-primary" id="summary-next-btn" disabled>다음</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

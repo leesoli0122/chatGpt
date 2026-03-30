@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title>자동이체 계좌 및 납부정보 입력</title>
+    <meta name="description" content="오릭스 전자약정 자동이체 계좌 및 납부정보 입력 화면입니다." />
+
+    <link rel="stylesheet" href="../assets/css/com/default.css" />
+    <link rel="stylesheet" href="../assets/css/com/common.css" />
+    <link rel="stylesheet" href="../assets/css/com/style.css" />
+    <link rel="stylesheet" href="../assets/css/com/fonts.css" />
+    <link rel="stylesheet" href="../assets/css/com/layout.css" />
+    <link rel="stylesheet" href="../assets/css/com/input.css" />
+    <link rel="stylesheet" href="../assets/css/com/button.css" />
+    <link rel="stylesheet" href="../assets/css/com/content.css" />
+    <link rel="stylesheet" href="../assets/css/page/orix-payment.css" />
+
+    <script type="text/javascript" src="../assets/js/lib/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../assets/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../assets/js/lib/ui_plugin.js"></script>
+    <script type="text/javascript" src="../assets/js/ui/ui-util.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <h1 class="header-logo">
+                    <a href="#" aria-label="오릭스 메인으로 이동">
+                        <img src="../assets/images/ORIX_logo.png" alt="ORIX 로고" />
+                    </a>
+                </h1>
+
+                <div class="header-util">
+                    <p class="customer" aria-label="고객센터 02-2050-6700">
+                        <span class="customer-label">고객센터</span>
+                        <span class="customer-number">02-2050-6700</span>
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <div class="bodyWrap">
+            <main class="contentWrap" id="content">
+                <section class="page-container payment">
+                    <div class="step-wrap">
+                        <ul class="step-list" aria-label="진행 단계">
+                            <li>1</li>
+                            <li class="is-active" aria-current="step">2</li>
+                            <li>3</li>
+                        </ul>
+                        <h2 class="page-title">견적을 확인해주세요</h2>
+                    </div>
+                
+                    <div class="auth-body">
+                        <div class="auth-grid">
+                            <!-- 수정: info-card 내부 공통 구조 유지 -->
+                            <div class="info-card" aria-labelledby="customer-info-title">
+                                <h3 id="summary-title" class="card-title">고객정보</h3>
+                
+                                <div class="field-row form-group">
+                                    <label for="depositor-name" class="label-tit">예금주</label>
+                                    <div class="field-box">
+                                        <span class="ipt-clear">
+                                            <input type="text" id="depositor-name" name="depositor-name" placeholder="예금주명을 입력해 주세요" />
+                                        </span>
+                                    </div>
+                                </div>
+                
+                                <div class="field-row form-group">
+                                    <div class="label-row tooltip-wrap">
+                                        <label for="bank-code" class="label-tit">계좌번호</label>
+                                        <button
+                                            type="button"
+                                            class="btn-tooltip"
+                                            aria-describedby="tooltip-account"
+                                            aria-expanded="false"
+                                        >
+                                            <span class="sr-only">계좌번호 안내 보기</span>
+                                        </button>
+                                        <div class="tooltip-box" id="tooltip-account" role="tooltip">
+                                            핸드폰번호의 평생 계좌번호는 자동이체 출금용 계좌로​ 등록할 수 없습니다.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="field-box">
+                                        <div class="inline-row account-row">
+                                            <div class="select-box">
+                                                <select id="bank-code" name="bank-code">
+                                                    <option value="0" selected>은행선택</option>
+                                                    <option value="1">우리은행</option>
+                                                    <option value="2">국민은행</option>
+                                                    <option value="3">신한은행</option>
+                                                </select>
+                                            </div>
+                                            <span class="ipt-clear">
+                                                <input
+                                                    type="tel"
+                                                    id="account-number"
+                                                    name="account-number"
+                                                    placeholder="'-' 없이 숫자만 입력해 주세요."
+                                                />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="field-row form-group">
+                                    <div class="label-row tooltip-wrap">
+                                        <label for="email-id" class="label-tit">이메일</label>
+                                        <button type="button" class="btn-tooltip" aria-describedby="tooltip-email" aria-expanded="false">
+                                            <span class="sr-only">이메일 안내 보기</span>
+                                        </button>
+                                        <div class="tooltip-box" id="tooltip-email" role="tooltip">
+                                            매달 결제 내역과 영수증을 수신 받을 메일 주소를 ​ 입력해 주세요. (재무 담당자 메일 권장)
+                                        </div>
+                                    </div>
+                                
+                                    <div class="field-box">
+                                        <div class="inline-row email-row">
+                                            <span class="ipt-clear">
+                                                <input type="text" id="email-id" name="email-id" placeholder="이메일을 입력해 주세요."/>
+                                            </span>
+                                            <span class="row-mark" aria-hidden="true">@</span>
+                                            <span class="ipt-clear">
+                                                <input type="text" id="email-domain" name="email-domain" title="이메일 도메인"/>
+                                            </span>
+                                        </div>
+                                
+                                        <div class="check-item same-check">
+                                            <label for="same-email" class="check">
+                                                <input type="checkbox" id="same-email" name="same-email" value=""/>
+                                                <span>계약서 및 안내문 수신 메일 정보와 동일</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- 수정: info-card 내부 공통 구조 유지 -->
+                            <div class="info-card" aria-labelledby="payment-date-title">
+                                <h3 id="payment-date-title" class="card-title">납부일 설정</h3>
+                
+                                <div class="field-row form-group payment-type">
+                                    <div class="payment-radio">
+                                        <input type="radio" id="payNext" name="payment-type" value="next-month" checked />
+                                        <label for="payNext">
+                                            <span class="check-circle"></span>
+                                            <span class="txt">익월납부</span>
+                                        </label>
+                                    </div>
+                                
+                                    <div class="payment-radio">
+                                        <input type="radio" id="payCurrent" name="payment-type" value="current-month" />
+                                        <label for="payCurrent">
+                                            <span class="check-circle"></span>
+                                            <span class="txt">당월납부</span>
+                                        </label>
+                                    </div>
+                                
+                                    <div class="payment-radio">
+                                        <input type="radio" id="payDirect" name="payment-type" value="direct-input" />
+                                        <label for="payDirect">
+                                            <span class="check-circle"></span>
+                                            <span class="txt">직접입력</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="field-row form-group" id="schedule-button-area">
+                                    <div class="field-box">
+                                        <div class="payment-day-list">
+                                            <button type="button" class="btn-payment-day" data-next-date="2026.03.05" data-current-date="2026.02.05">5일</button>
+                                            <button type="button" class="btn-payment-day is-active" data-next-date="2026.03.15" data-current-date="2026.02.15">15일</button>
+                                            <button type="button" class="btn-payment-day" data-next-date="2026.03.25" data-current-date="2026.02.25">25일</button>
+                                            <button type="button" class="btn-payment-day" data-next-date="2026.03.31" data-current-date="2026.02.28">말일</button>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <div class="field-row form-group payment-hidden" id="schedule-direct-area">
+                                    <label for="direct-payment-date" class="label-tit">직접입력</label>
+                                    <div class="field-box">
+                                        <span class="ipt-clear">
+                                            <input type="date" id="direct-payment-date" name="direct-payment-date" value="2026-03-15" />
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <p class="info-notice">은행 휴무일, 공휴일에는 자동이체가 진행되지 않으며, 돌아오는 첫 영업일에 지연 출금됩니다.</p>
+
+                                <div class="price-box">
+                                    <span class="price-label">첫회차 납부일</span>
+                                    <strong class="payment-first-date" id="first-payment-date">2026.03.15</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- 수정: bottom-container 공통 구조 유지 -->
+            <div class="bottom-container">
+                <div class="bottom-inner">
+                    <div class="bottom-info">
+                        <p class="bottom-text">
+                            <span class="bottom-label">법인명</span>
+                            <strong class="bottom-value">(주)홍길동컴퍼니</strong>
+                        </p>
+                        <p class="bottom-text">
+                            <span class="bottom-label">계약서 및 안내문 수신 메일 주소</span>
+                            <strong class="bottom-value">orixagreementmanagement@orix.co.kr</strong>
+                        </p>
+                    </div>
+
+                    <div class="btn-content cta">
+                        <div class="button-group">
+                            <button type="button" class="btn-primary btn-submit">다음</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
